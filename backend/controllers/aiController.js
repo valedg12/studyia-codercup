@@ -1,7 +1,7 @@
-// Archivo: backend/controllers/aiController.js
+
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-// Inicializamos el SDK con la clave secreta de tu .env
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const generateStudyPlan = async (req, res) => {

@@ -1,4 +1,4 @@
-// Archivo: frontend/src/pages/SubjectDetail.jsx
+
 import { useEffect, useState, useRef } from 'react';
 import { Container, Typography, Paper, Box, CircularProgress, Button, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Checkbox, Divider, LinearProgress } from '@mui/material';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -68,7 +68,7 @@ const SubjectDetail = () => {
                         ✏️ Editar Materia
                     </Button>
                     <Button variant="contained" color="secondary" onClick={handlePrint}>
-                        🖨️ Imprimir / Guardar PDF
+                         Imprimir / Guardar PDF
                     </Button>
                 </Box>
             </Box>
@@ -119,7 +119,7 @@ const SubjectDetail = () => {
 
                 <Paper elevation={3} sx={{ p: { xs: 3, sm: 4 }, bgcolor: '#faf5ff' }}>
                     <Typography variant="h4" fontWeight="bold" color="primary" gutterBottom>
-                        Plan de Estudio de la IA 🤖
+                        Plan de Estudio de la IA 
                     </Typography>
                     <Divider sx={{ mb: 3 }} />
                     

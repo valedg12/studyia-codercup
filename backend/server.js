@@ -1,4 +1,4 @@
-// Archivo: backend/server.js
+
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
@@ -23,7 +23,7 @@ app.use('/api/ai', require('./routes/aiRoutes'));           // Rutas para la Int
 
 // 6. Ruta de prueba básica
 app.get('/', (req, res) => {
-    res.send('API de StudyIA funcionando perfectamente 🚀');
+    res.send('API de StudyIA funcionando perfectamente ');
 });
 
 // 7. Arrancar el servidor

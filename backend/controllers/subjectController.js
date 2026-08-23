@@ -29,7 +29,7 @@ const createSubject = async (req, res) => {
         try {
             console.log("Intentando conectar con Gemini...");
             const response = await ai.models.generateContent({
-                model: 'gemini-3.6-flash', // <-- Actualizado al modelo correcto
+                model: 'gemini-3.6-flash', 
                 contents: prompt,
             });
             studyPlanText = response.text;
@@ -88,7 +88,7 @@ const toggleTopic = async (req, res) => {
         const topic = subject.topics.id(topicId);
         if (!topic) return res.status(404).json({ message: 'Tema no encontrado' });
 
-        topic.completed = !topic.completed; // Invierte el estado actual
+        topic.completed = !topic.completed; 
         await subject.save();
         res.status(200).json(subject);
     } catch (error) {
@@ -114,7 +114,7 @@ const updateSubject = async (req, res) => {
             subject.topics = topics;
         }
 
-        // 2. ¡Volvemos a pedirle a Gemini que genere el plan con los nuevos datos!
+        // 2. Volvemos a pedirle a Gemini que genere el plan con los nuevos datos
         const topicsList = subject.topics && subject.topics.length > 0 
             ? subject.topics.map(t => t.name).join(', ') 
             : 'Temas generales';

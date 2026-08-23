@@ -15,11 +15,11 @@ const checkearModelos = async () => {
         const datos = await respuesta.json();
         
         if (datos.error) {
-            console.error("❌ Error de la API:", datos.error.message);
+            console.error(" Error de la API:", datos.error.message);
             return;
         }
 
-        console.log("✅ MODELOS DISPONIBLES PARA GENERAR TEXTO:");
+        console.log(" MODELOS DISPONIBLES PARA GENERAR TEXTO:");
         console.log("===========================================");
         
         datos.models.forEach(modelo => {
@@ -32,7 +32,7 @@ const checkearModelos = async () => {
         console.log("===========================================\n");
 
     } catch (error) {
-        console.error("❌ Error de conexión:", error.message);
+        console.error(" Error de conexión:", error.message);
     }
 };
 

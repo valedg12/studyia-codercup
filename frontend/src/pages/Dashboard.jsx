@@ -1,4 +1,4 @@
-// Archivo: frontend/src/pages/Dashboard.jsx
+
 import { useEffect, useState } from 'react';
 import { Container, Typography, Button, Card, CardContent, Grid, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';

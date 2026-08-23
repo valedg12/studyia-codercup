@@ -45,7 +45,7 @@ const EditSubject = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsSaving(true); // Desactivamos el botón mientras Gemini piensa
+        setIsSaving(true); 
         
         const updatedData = { name, examDate, hoursPerDay: Number(hoursPerDay), topics };
         const result = await updateSubject(id, updatedData);

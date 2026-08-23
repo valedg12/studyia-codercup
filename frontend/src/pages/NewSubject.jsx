@@ -1,4 +1,4 @@
-// Archivo: frontend/src/pages/NewSubject.jsx
+
 import { useState } from 'react';
 import { Container, Typography, TextField, Button, Box, Paper, List, ListItem, ListItemText } from '@mui/material';
 import { useNavigate } from 'react-router-dom';

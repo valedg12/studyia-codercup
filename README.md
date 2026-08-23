@@ -1,6 +1,6 @@
 # 📚 StudyIA - Gestor de Estudio Inteligente
 
-Proyecto desarrollado para la **CoderCup AI**. 
+ 
 StudyIA es una aplicación Full Stack que utiliza Inteligencia Artificial para ayudar a los estudiantes a organizar su tiempo y optimizar su aprendizaje.
 
 ##  Características Principales

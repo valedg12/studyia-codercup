@@ -17,27 +17,33 @@ const createSubject = async (req, res) => {
     try {
         const { name, examDate, hoursPerDay, topics } = req.body;
         
-        const topicsList = topics && topics.length > 0 ? topics.map(t => t.name).join(', ') : 'Temas generales';
+        // 1. Armamos los temas para la IA
+        const topicsList = topics && topics.length > 0 
+            ? topics.map(t => t.name).join(', ') 
+            : 'Temas generales';
+            
         const prompt = `Actúa como un tutor académico experto. Crea un plan de estudio detallado día por día para la materia "${name}".
         - Fecha del examen: ${examDate}
         - Disponibilidad: ${hoursPerDay} horas por día
         - Temas a cubrir: ${topicsList}
         Organiza el contenido lógicamente.`;
 
-        let studyPlanText = "No se pudo generar el plan de estudio automáticamente.";
+        let studyPlanText = "";
 
+        // 2. Llamamos a Gemini
         try {
-            console.log("Intentando conectar con Gemini...");
+            console.log("Intentando conectar con Gemini para CREAR...");
             const response = await ai.models.generateContent({
-                model: 'gemini-3.6-flash', 
+                model: 'gemini-3.6-flash',
                 contents: prompt,
             });
             studyPlanText = response.text;
-            console.log("¡Plan generado con éxito!");
+            console.log("¡Plan CREADO con éxito!");
         } catch (aiError) {
-            console.error("❌ ERROR DETALLADO DE GEMINI:", aiError);
+            console.error(" ERROR DETALLADO DE GEMINI AL CREAR:", aiError);
         }
 
+        // 3. Guardamos en la base de datos
         const newSubject = await Subject.create({
             name,
             examDate,
@@ -51,8 +57,7 @@ const createSubject = async (req, res) => {
         console.error("❌ Error en el servidor al crear materia:", error);
         res.status(400).json({ message: error.message });
     }
-};
-
+}
 const getSubjectById = async (req, res) => {
     try {
         const subject = await Subject.findById(req.params.id);

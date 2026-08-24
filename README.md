@@ -48,3 +48,4 @@ StudyIA es una aplicación Full Stack que utiliza Inteligencia Artificial para a
    * Iniciar la aplicación: `npm run dev`
 
 ---
+ ## Vercel:  https://studyia-codercup.vercel.app/
